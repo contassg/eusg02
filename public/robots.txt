@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://martinssilvaotica.netlify.app/sitemap.xml
