@@ -1,16 +1,634 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suporte - Fale Conosco</title>
-    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Martins Silva Ótica & Relojoaria | Tradição, Estilo e Precisão</title>
+  
+  <!-- Google Fonts: Inter & Playfair Display for luxury/refined aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              900: '#0a1128',
+              800: '#0f1d40',
+              700: '#1c2e56',
+              600: '#2b4478'
+            },
+            gold: {
+              300: '#f6e05e',
+              400: '#ecc94b',
+              500: '#d4af37',
+              600: '#b8942b',
+              700: '#947620'
+            },
+            sand: '#fcfbf7'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom subtle touches */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f6e05e 0%, #d4af37 50%, #f6e05e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-gradient-bg {
+      background: linear-gradient(135deg, #d4af37 0%, #b8942b 100%);
+    }
+    .gold-border-glow:hover {
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#fcfcfd] text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- TOP BAR / ANNOUNCEMENT -->
+  <div class="bg-navy-900 text-slate-300 text-xs py-2 px-4 border-b border-navy-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center"><i class="fa-solid fa-gem text-gold-500 mr-1.5 text-xs"></i> Mais de 17 anos de excelência e precisão</span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Araxá - MG</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#contato" class="hover:text-gold-400 transition-colors flex items-center">
+          <i class="fa-regular fa-clock mr-1 text-gold-500"></i> Atendimento Especializado
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo / Name -->
+        <a href="#inicio" class="flex items-center space-x-3 group">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 flex items-center justify-center text-navy-900 shadow-md group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-stopwatch text-xl"></i>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white leading-none">
+              Martins Silva
+            </span>
+            <span class="text-xs uppercase tracking-widest text-gold-500 font-semibold mt-1">
+              Ótica &amp; Relojoaria
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors">Início</a>
+          <a href="#quem-somos" class="text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors">Quem Somos</a>
+          <a href="#servicos" class="text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors">Serviços</a>
+          <a href="#politicas" class="text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors">Políticas &amp; Privacidade</a>
+          <a href="#contato" class="text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors">Contato</a>
+          <a href="#servicos" class="px-5 py-2.5 rounded-full text-xs font-semibold text-navy-900 gold-gradient-bg hover:brightness-110 shadow-sm transition-all transform hover:-translate-y-0.5">
+            Explorar Serviços
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex md:hidden">
+          <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-lg focus:outline-none" aria-label="Abrir menu">
+            <i id="mobile-menu-icon" class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+      <a href="#inicio" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-gold-400">Início</a>
+      <a href="#quem-somos" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-gold-400">Quem Somos</a>
+      <a href="#servicos" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-gold-400">Serviços</a>
+      <a href="#politicas" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-gold-400">Políticas e Privacidade</a>
+      <a href="#contato" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-gold-400">Contato</a>
+      <div class="pt-2">
+        <a href="#servicos" class="mobile-link block w-full text-center px-4 py-3 rounded-xl font-semibold text-navy-900 gold-gradient-bg">
+          Nossos Serviços
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="inicio" class="relative bg-navy-900 text-white overflow-hidden py-24 sm:py-32">
+    <!-- Background Decor Accent -->
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="absolute -top-32 -right-32 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-navy-600/30 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/80 border border-gold-500/30 text-gold-400 text-xs uppercase tracking-widest font-semibold">
+            <i class="fa-regular fa-compass"></i> Tradição Desde 2009
+          </div>
+          <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-white">
+            A harmonia entre <span class="gold-gradient-text">precisão milimétrica</span> e visão refinada.
+          </h1>
+          <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Na <strong>Martins Silva Ótica &amp; Relojoaria</strong>, cada segundo e cada detalhe importam. Proporcionamos restauração, calibração de instrumentos de precisão e soluções visuais com elegância clássica e compromisso genuíno.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <a href="#servicos" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-navy-900 gold-gradient-bg hover:brightness-110 shadow-lg shadow-gold-500/20 transition transform hover:-translate-y-0.5">
+              Conhecer Nossos Serviços <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </a>
+            <a href="#quem-somos" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-sm font-semibold text-slate-200 border border-slate-700 hover:border-gold-500/50 hover:bg-navy-800 transition">
+              Nossa Trajetória
+            </a>
+          </div>
+
+          <!-- Highlights bar -->
+          <div class="pt-8 border-t border-navy-800/80 grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">+17 Anos</p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">De História</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">100%</p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Atenção ao Detalhe</p>
+            </div>
+            <div>
+              <p class="text-2xl sm:text-3xl font-bold font-serif text-gold-400">Artesanal</p>
+              <p class="text-xs text-slate-400 mt-1 uppercase tracking-wider">Cuidado &amp; Técnica</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graphic Showcase Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md bg-navy-800/60 p-8 rounded-3xl border border-navy-700/80 shadow-2xl backdrop-blur-sm">
+            <div class="aspect-square rounded-2xl bg-gradient-to-br from-navy-900 to-navy-700 flex flex-col items-center justify-center p-8 text-center relative overflow-hidden border border-gold-500/20">
+              <div class="w-24 h-24 rounded-full border border-gold-400/30 flex items-center justify-center mb-6 gold-gradient-text text-5xl">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-white mb-2">Relojoaria &amp; Ótica</h3>
+              <p class="text-xs text-slate-300 max-w-xs leading-relaxed">
+                Manutenção minuciosa de maquinários clássicos e automáticos, combinada com lentes de alta nitidez para o seu dia a dia.
+              </p>
+              
+              <div class="mt-6 flex items-center space-x-2 text-gold-400 text-xs font-semibold tracking-wider uppercase">
+                <span class="w-8 h-[1px] bg-gold-400/50"></span>
+                <span>Qualidade Impecável</span>
+                <span class="w-8 h-[1px] bg-gold-400/50"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS SECTION -->
+  <section id="quem-somos" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-500/10 px-4 py-1.5 rounded-full inline-block mb-3">
+          Legado &amp; Valores
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">
+          Nossa História de Dedicação e Confiabilidade
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Story / Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-slate-700 leading-relaxed text-base sm:text-lg">
+          <p class="font-medium text-navy-900 text-xl font-serif">
+            Fundada em 18 de fevereiro de 2009, a <span class="text-navy-900 font-bold">MARTINS SILVA ÓTICA LTDA</span> construiu ao longo de mais de 17 anos uma trajetória pautada pelo respeito ao cliente e pela paixão pela arte do tempo.
+          </p>
+          <p>
+            Com sólidas raízes e atuação especializada no comércio varejista de artigos de relojoaria e atendimento óptico, nossa história reflete dedicação constante. Cada relógio que passa pelas mãos de nossos mestres relojoeiros e cada armação ajustada representam a continuidade do nosso propósito: unir exatidão técnica e bem-estar visual.
+          </p>
+          <p>
+            Hoje, sediada em Araxá - Minas Gerais, a Martins Silva permanece fiel ao compromisso com a confiança, o atendimento cordial e a excelência que consolidaram o carinho e o prestígio de clientes e parceiros ao longo de quase duas décadas.
+          </p>
+
+          <!-- Core Pillars -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-gold-500/40 transition">
+              <div class="text-gold-600 mb-2 text-2xl"><i class="fa-solid fa-bullseye"></i></div>
+              <h4 class="font-bold text-navy-900 text-sm mb-1">Precisão</h4>
+              <p class="text-xs text-slate-600 leading-normal">Aferição e ajustes rigorosos em peças mecânicas e digitais.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-gold-500/40 transition">
+              <div class="text-gold-600 mb-2 text-2xl"><i class="fa-solid fa-handshake"></i></div>
+              <h4 class="font-bold text-navy-900 text-sm mb-1">Integridade</h4>
+              <p class="text-xs text-slate-600 leading-normal">Transparência em orçamentos, peças genuínas e atendimento ético.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-gold-500/40 transition">
+              <div class="text-gold-600 mb-2 text-2xl"><i class="fa-solid fa-medal"></i></div>
+              <h4 class="font-bold text-navy-900 text-sm mb-1">Tradição</h4>
+              <p class="text-xs text-slate-600 leading-normal">Mais de 17 anos acumulando conhecimento e dedicação contínua.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Facts Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-gradient-to-br from-navy-900 to-navy-800 text-white rounded-3xl p-8 shadow-xl border border-navy-700 relative overflow-hidden">
+            <div class="absolute -bottom-8 -right-8 text-navy-700/30 text-9xl pointer-events-none">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-bold mb-6 text-gold-400 flex items-center gap-2">
+              <i class="fa-solid fa-building-circle-check text-lg"></i> Dados Institucionais
+            </h3>
+            
+            <ul class="space-y-4 text-sm divide-y divide-navy-700/60">
+              <li class="pt-3 first:pt-0">
+                <span class="text-xs uppercase tracking-wider text-slate-400 block font-semibold">Razão Social</span>
+                <span class="text-base font-semibold text-slate-100">MARTINS SILVA OTICA LTDA - ME</span>
+              </li>
+              <li class="pt-3">
+                <span class="text-xs uppercase tracking-wider text-slate-400 block font-semibold">Inscrição no CNPJ</span>
+                <span class="text-base font-semibold text-gold-300 font-mono">09.426.097/0003-35</span>
+              </li>
+              <li class="pt-3">
+                <span class="text-xs uppercase tracking-wider text-slate-400 block font-semibold">Data de Fundação</span>
+                <span class="text-base font-semibold text-slate-100">18 de Fevereiro de 2009 (17+ anos)</span>
+              </li>
+              <li class="pt-3">
+                <span class="text-xs uppercase tracking-wider text-slate-400 block font-semibold">Atividade Econômica Principal</span>
+                <span class="text-base font-semibold text-slate-100">Comércio Varejista de Artigos de Relojoaria</span>
+              </li>
+              <li class="pt-3">
+                <span class="text-xs uppercase tracking-wider text-slate-400 block font-semibold">Localização</span>
+                <span class="text-base font-semibold text-slate-100">Araxá - Minas Gerais, Brasil</span>
+              </li>
+            </ul>
+
+            <div class="mt-8 p-4 rounded-xl bg-navy-900/80 border border-gold-500/20 text-xs text-slate-300 flex items-start gap-3">
+              <i class="fa-solid fa-circle-info text-gold-400 text-sm mt-0.5"></i>
+              <p>Histórico exemplar e compromisso contínuo com a satisfação de nossos clientes em cada serviço prestado.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVIÇOS SECTION -->
+  <section id="servicos" class="py-24 bg-slate-50 relative border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-500/10 px-4 py-1.5 rounded-full inline-block mb-3">
+          O que fazemos
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">
+          Nossos Serviços Especializados
+        </h2>
+        <p class="text-slate-600 mt-3 text-base">
+          Soluções completas com o carinho que seu relógio merece e a clareza que seus olhos precisam.
+        </p>
+        <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Serviço 1 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/70 hover:border-gold-500/50 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
+              Artigos de Relojoaria
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Comércio e restauração de modelos de pulso clássicos, automáticos, a quartzo e digitais das mais conceituadas marcas.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Relógios masculinos e femininos</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Peças e maquinários originais</li>
+          </ul>
+        </div>
+
+        <!-- Serviço 2 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/70 hover:border-gold-500/50 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
+              Ajustes &amp; Troca de Bateria
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Substituição imediata de baterias de alta duração, troca e redução de elos de pulseiras de metal, couro e silicone.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Baterias seladas e testadas</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Fechos e pinos reforçados</li>
+          </ul>
+        </div>
+
+        <!-- Serviço 3 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/70 hover:border-gold-500/50 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-glasses"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
+              Armações &amp; Ótica
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Consultoria para escolha da armação ideal para o seu formato de rosto aliada a lentes antirreflexo, multifocais e filtro azul.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Armações leves e resistentes</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Conforto e ergonomia visual</li>
+          </ul>
+        </div>
+
+        <!-- Serviço 4 -->
+        <div class="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/70 hover:border-gold-500/50 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-sparkles text-2xl"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-navy-900 mb-3 group-hover:text-gold-600 transition-colors">
+              Polimento &amp; Manutenção
+            </h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+              Recuperação estética de caixas e vidros de cristal mineral ou safira, vedação contra água e lubrificação de engrenagens.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-500 space-y-2 border-t border-slate-100 pt-4">
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Limpeza por ultrassom</li>
+            <li class="flex items-center"><i class="fa-solid fa-check text-gold-500 mr-2"></i> Teste de estanqueidade</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Action Banner -->
+      <div class="mt-16 bg-navy-900 rounded-3xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+        <div class="relative z-10 max-w-2xl mx-auto space-y-4">
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold">Precisa de um reparo específico ou avaliação?</h3>
+          <p class="text-slate-300 text-sm sm:text-base">
+            Visite nossa unidade em Araxá ou envie uma mensagem para obter orientações diretas com nossa equipe técnica.
+          </p>
+          <div class="pt-2">
+            <a href="#contato" class="inline-flex items-center px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-navy-900 gold-gradient-bg hover:brightness-110 shadow-lg transition">
+              Fale com um Especialista
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- POLÍTICAS E PRIVACIDADE SECTION -->
+  <section id="politicas" class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-500/10 px-4 py-1.5 rounded-full inline-block mb-3">
+          Transparência &amp; Segurança
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 tracking-tight">
+          Políticas e Privacidade
+        </h2>
+        <p class="text-slate-600 mt-2 text-sm">
+          Em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD - Lei nº 13.709/2018).
+        </p>
+        <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <!-- Policy Accordions / Content Cards -->
+      <div class="space-y-6">
+        
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-lg font-bold text-navy-900 flex items-center mb-3">
+            <i class="fa-solid fa-shield-halved text-gold-600 mr-3 text-lg"></i>
+            1. Compromisso com a Privacidade
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A <strong>MARTINS SILVA OTICA LTDA - ME</strong> preza pela proteção, confidencialidade e integridade dos dados pessoais de todos os seus clientes, parceiros e usuários. Adotamos padrões técnicos e organizacionais rigorosos para resguardar quaisquer informações fornecidas em nossos atendimentos presenciais ou digitais.
+          </p>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-lg font-bold text-navy-900 flex items-center mb-3">
+            <i class="fa-solid fa-database text-gold-600 mr-3 text-lg"></i>
+            2. Coleta e Finalidade dos Dados
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-3">
+            Os dados coletados (como nome, telefone, e-mail e dados necessários para ordens de serviço) destinam-se unicamente para:
+          </p>
+          <ul class="list-disc list-inside text-sm text-slate-600 space-y-1.5">
+            <li>Emissão de orçamentos, garantias e acompanhamento de ordens de serviço de relojoaria e ótica;</li>
+            <li>Comunicação sobre o status de consertos, manutenções e produtos solicitados;</li>
+            <li>Cumprimento de obrigações legais, regulatórias ou fiscais junto aos órgãos competentes.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-lg font-bold text-navy-900 flex items-center mb-3">
+            <i class="fa-solid fa-lock text-gold-600 mr-3 text-lg"></i>
+            3. Compartilhamento e Armazenamento Seguro
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A empresa <strong>não</strong> comercializa nem transfere dados pessoais a terceiros com objetivos publicitários. Compartilhamentos ocorrem estritamente com fornecedores e processadores essenciais para a prestação do serviço (como emissão de notas fiscais) ou sob determinação legal e judicial.
+          </p>
+        </div>
+
+        <div class="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200">
+          <h3 class="text-lg font-bold text-navy-900 flex items-center mb-3">
+            <i class="fa-solid fa-user-check text-gold-600 mr-3 text-lg"></i>
+            4. Direitos do Titular de Dados
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Em concordância com a LGPD, o titular possui o direito de confirmar a existência de tratamento, solicitar acesso, correção de dados incompletos ou inexatos, anonimização, bloqueio ou eliminação de informações desnecessárias, bem como revogar seu consentimento a qualquer momento por meio de nossos canais oficiais.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTATO SECTION -->
+  <section id="contato" class="py-20 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-gold-600 bg-gold-500/10 px-4 py-1.5 rounded-full inline-block mb-3">
+          Localização &amp; Contato
+        </span>
+        <h2 class="font-serif text-3xl font-bold text-navy-900">
+          Venha nos Visitar
+        </h2>
+        <div class="w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-navy-50 text-navy-900 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-location-dot text-gold-600"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 mb-1">Nosso Endereço</h4>
+          <p class="text-slate-600 text-sm">Av. Imbiara, 216 - A, Centro</p>
+          <p class="text-slate-600 text-sm">Araxá - MG | CEP: 38183-244</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-navy-50 text-navy-900 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-phone text-gold-600"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 mb-1">Atendimento</h4>
+          <p class="text-slate-600 text-sm">Suporte &amp; Informações de Serviços</p>
+          <p class="text-slate-500 text-xs mt-1">Segunda a Sexta: 08:30 às 18:00</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center flex flex-col items-center">
+          <div class="w-12 h-12 rounded-full bg-navy-50 text-navy-900 flex items-center justify-center text-xl mb-4">
+            <i class="fa-solid fa-envelope text-gold-600"></i>
+          </div>
+          <h4 class="font-bold text-navy-900 mb-1">Privacidade &amp; LGPD</h4>
+          <p class="text-slate-600 text-sm">Dúvidas sobre tratamento de dados?</p>
+          <p class="text-gold-600 text-xs mt-1 font-semibold">contato@martinssilvaotica.com.br</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-navy-900 text-slate-300 pt-16 pb-8 border-t border-navy-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-navy-800">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-full gold-gradient-bg flex items-center justify-center text-navy-900">
+              <i class="fa-solid fa-stopwatch text-base"></i>
+            </div>
+            <span class="font-serif text-lg font-bold text-white tracking-tight">
+              Martins Silva
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Mais de 17 anos dedicados à precisão em relojoaria e excelência em ótica, entregando sempre o melhor cuidado aos nossos clientes.
+          </p>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div>
+          <h4 class="text-white font-serif font-semibold text-sm mb-4 tracking-wider uppercase">Navegação</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#inicio" class="hover:text-gold-400 transition-colors">Início</a></li>
+            <li><a href="#quem-somos" class="hover:text-gold-400 transition-colors">Quem Somos</a></li>
+            <li><a href="#servicos" class="hover:text-gold-400 transition-colors">Nossos Serviços</a></li>
+            <li><a href="#politicas" class="hover:text-gold-400 transition-colors">Políticas &amp; Privacidade</a></li>
+            <li><a href="#contato" class="hover:text-gold-400 transition-colors">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Corporate Info -->
+        <div>
+          <h4 class="text-white font-serif font-semibold text-sm mb-4 tracking-wider uppercase">Identificação da Empresa</h4>
+          <div class="space-y-2 text-xs text-slate-300">
+            <p><strong class="text-white">Razão Social:</strong><br>MARTINS SILVA OTICA LTDA - ME</p>
+            <p><strong class="text-white">CNPJ:</strong><br><span class="font-mono text-gold-400">09.426.097/0003-35</span></p>
+            <p><strong class="text-white">Atividade:</strong><br>Comércio varejista de artigos de relojoaria</p>
+          </div>
+        </div>
+
+        <!-- Column 4: Official Address -->
+        <div>
+          <h4 class="text-white font-serif font-semibold text-sm mb-4 tracking-wider uppercase">Endereço Comercial</h4>
+          <address class="not-italic text-xs text-slate-300 space-y-1 leading-relaxed">
+            <p class="font-semibold text-white">AV. IMBIARA, 216 - A</p>
+            <p>CENTRO</p>
+            <p>ARAXÁ - MG</p>
+            <p>CEP: 38183-244</p>
+            <p class="text-gold-400 font-semibold mt-1">Brasil</p>
+          </address>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Legal -->
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+        <p>&copy; 2009 - 2026 MARTINS SILVA OTICA LTDA - ME. Todos os direitos reservados.</p>
+        <div class="flex space-x-6">
+          <a href="#politicas" class="hover:text-gold-400 transition-colors">LGPD &amp; Termos</a>
+          <a href="#inicio" class="hover:text-gold-400 transition-colors">Voltar ao Topo <i class="fa-solid fa-arrow-up ml-1 text-[10px]"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: Mobile Navigation Toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileIcon = document.getElementById('mobile-menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+        if (isOpen) {
+          mobileMenu.classList.remove('hidden');
+          mobileIcon.classList.remove('fa-bars');
+          mobileIcon.classList.add('fa-xmark');
+        } else {
+          mobileMenu.classList.add('hidden');
+          mobileIcon.classList.remove('fa-xmark');
+          mobileIcon.classList.add('fa-bars');
+        }
+      }
+
+      mobileBtn.addEventListener('click', toggleMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>
